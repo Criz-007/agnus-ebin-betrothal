@@ -14,24 +14,16 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: url('https://github.com/user-attachments/assets/926cf672-e1b5-4488-bc77-ae59ec1069bc') center/cover no-repeat;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('background.jpg') center/cover no-repeat,
+                linear-gradient(135deg, #c9a690 0%, #8b6f5c 50%, #d4a896 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
             position: relative;
-        }
-        
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 0;
         }
 
         .container {
