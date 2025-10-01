@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Add the Betrothal of Agnus & Ebin to your calendar">
+    <title>Betrothal of Agnus & Ebin - Add to Calendar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('background.jpg') center/cover no-repeat,
+                linear-gradient(135deg, #c9a690 0%, #8b6f5c 50%, #d4a896 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .event-details {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .event-details h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .detail-item {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .detail-icon {
+            color: #667eea;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .detail-content {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .calendar-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .calendar-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .calendar-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .calendar-btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-google {
+            background: #4285f4;
+        }
+
+        .btn-google:hover {
+            background: #357ae8;
+        }
+
+        .btn-apple {
+            background: #555;
+        }
+
+        .btn-apple:hover {
+            background: #333;
+        }
+
+        .btn-outlook {
+            background: #0078d4;
+        }
+
+        .btn-outlook:hover {
+            background: #106ebe;
+        }
+
+        .btn-yahoo {
+            background: #6001d2;
+        }
+
+        .btn-yahoo:hover {
+            background: #5001b8;
+        }
+
+        .btn-office365 {
+            background: #d83b01;
+        }
+
+        .btn-office365:hover {
+            background: #c43401;
+        }
+
+        .instructions {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            color: #1565c0;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .calendar-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💍 Agnus & Ebin 💍</h1>
+        <p class="subtitle">Betrothal Ceremony</p>
+
+        <div class="event-details">
+            <h2>Event Details</h2>
+            <div class="detail-item">
+                <span class="detail-icon">📅</span>
+                <div class="detail-content">
+                    <span class="detail-label">Date:</span> <span id="event-date">Monday, January 12, 2026</span>
+                </div>
+            </div>
+            <div class="detail-item">
+                <span class="detail-icon">⏰</span>
+                <div class="detail-content">
+                    <span class="detail-label">Time:</span> <span id="event-time">11:30 AM - 2:30 PM IST</span>
+                </div>
+            </div>
+            <div class="detail-item">
+                <span class="detail-icon">📍</span>
+                <div class="detail-content">
+                    <span class="detail-label">Location:</span> <span id="event-location">St. Mathews Church, Kottackupuram, Athirampuzha Vedagiri Rd, Athirampuzha, Kerala 686562, India</span>
+                </div>
+            </div>
+            <div class="detail-item">
+                <span class="detail-icon">📝</span>
+                <div class="detail-content">
+                    <span class="detail-label">Description:</span> <span id="event-description">With love, we — the family — warmly invite you to join us for the Betrothal of Agnus & Ebin. Your presence and blessings will make this occasion more joyful.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="calendar-buttons">
+            <a href="#" class="calendar-btn btn-google" id="btn-google" target="_blank">
+                Google Calendar
+            </a>
+            <a href="#" class="calendar-btn btn-apple" id="btn-apple" target="_blank">
+                Apple Calendar
+            </a>
+            <a href="#" class="calendar-btn btn-outlook" id="btn-outlook" target="_blank">
+                Outlook
+            </a>
+            <a href="#" class="calendar-btn btn-yahoo" id="btn-yahoo" target="_blank">
+                Yahoo Calendar
+            </a>
+            <a href="#" class="calendar-btn btn-office365" id="btn-office365" target="_blank">
+                Office 365
+            </a>
+        </div>
+
+        <div class="instructions">
+            💡 Click any button to add this event to your calendar. You'll be prompted to confirm before the event is added.
+        </div>
+    </div>
+
+    <script>
+        // Event details - Customize these values
+        const eventDetails = {
+            title: "Betrothal of Agnus & Ebin",
+            description: "With love, we — the family — warmly invite you to join us for the Betrothal of Agnus & Ebin. Your presence and blessings will make this occasion more joyful.",
+            location: "St. Mathews Church, Kottackupuram, Athirampuzha Vedagiri Rd, Athirampuzha, Kerala 686562, India",
+            // Date in IST (UTC+5:30): Monday, January 12, 2026, 11:30 AM – 2:30 PM IST
+            startDate: new Date("2026-01-12T11:30:00+05:30"),
+            endDate: new Date("2026-01-12T14:30:00+05:30")
+        };
+
+        // Helper function to format date for ICS file
+        function formatICSDate(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+            const seconds = String(date.getSeconds()).padStart(2, '0');
+            return `${year}${month}${day}T${hours}${minutes}${seconds}`;
+        }
+
+        // Helper function to format date for Google Calendar
+        function formatGoogleDate(date) {
+            return formatICSDate(date);
+        }
+
+        // Generate ICS file content
+        function generateICS() {
+            const icsContent = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//Agnus & Ebin Betrothal//EN',
+                'CALSCALE:GREGORIAN',
+                'METHOD:PUBLISH',
+                'BEGIN:VEVENT',
+                `DTSTART:${formatICSDate(eventDetails.startDate)}`,
+                `DTEND:${formatICSDate(eventDetails.endDate)}`,
+                `SUMMARY:${eventDetails.title}`,
+                `DESCRIPTION:${eventDetails.description}`,
+                `LOCATION:${eventDetails.location}`,
+                'STATUS:CONFIRMED',
+                'SEQUENCE:0',
+                `UID:${new Date().getTime()}@agnus-ebin-betrothal.com`,
+                `DTSTAMP:${formatICSDate(new Date())}`,
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\r\n');
+            
+            return icsContent;
+        }
+
+        // Create ICS file blob
+        function createICSBlob() {
+            const icsContent = generateICS();
+            return new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+        }
+
+        // Google Calendar URL
+        function getGoogleCalendarUrl() {
+            const startDate = formatGoogleDate(eventDetails.startDate);
+            const endDate = formatGoogleDate(eventDetails.endDate);
+            
+            const params = new URLSearchParams({
+                action: 'TEMPLATE',
+                text: eventDetails.title,
+                dates: `${startDate}/${endDate}`,
+                details: eventDetails.description,
+                location: eventDetails.location
+            });
+            
+            return `https://calendar.google.com/calendar/render?${params.toString()}`;
+        }
+
+        // Yahoo Calendar URL
+        function getYahooCalendarUrl() {
+            const startDate = formatGoogleDate(eventDetails.startDate);
+            const endDate = formatGoogleDate(eventDetails.endDate);
+            
+            const params = new URLSearchParams({
+                v: '60',
+                title: eventDetails.title,
+                st: startDate,
+                et: endDate,
+                desc: eventDetails.description,
+                in_loc: eventDetails.location
+            });
+            
+            return `https://calendar.yahoo.com/?${params.toString()}`;
+        }
+
+        // Office 365 Calendar URL
+        function getOffice365CalendarUrl() {
+            const startDate = eventDetails.startDate.toISOString();
+            const endDate = eventDetails.endDate.toISOString();
+            
+            const params = new URLSearchParams({
+                path: '/calendar/action/compose',
+                rru: 'addevent',
+                subject: eventDetails.title,
+                startdt: startDate,
+                enddt: endDate,
+                body: eventDetails.description,
+                location: eventDetails.location
+            });
+            
+            return `https://outlook.office.com/calendar/0/deeplink/compose?${params.toString()}`;
+        }
+
+        // Set up calendar links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Google Calendar
+            document.getElementById('btn-google').href = getGoogleCalendarUrl();
+            
+            // Apple Calendar & Outlook - Use data URL to open calendar app directly
+            const icsContent = generateICS();
+            const dataUrl = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(icsContent);
+            
+            document.getElementById('btn-apple').href = dataUrl;
+            document.getElementById('btn-outlook').href = dataUrl;
+            
+            // Yahoo Calendar
+            document.getElementById('btn-yahoo').href = getYahooCalendarUrl();
+            
+            // Office 365
+            document.getElementById('btn-office365').href = getOffice365CalendarUrl();
+        });
+    </script>
+</body>
+</html>
